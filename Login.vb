@@ -9,11 +9,12 @@ Public Class Login
 
         BukaKoneksi()
         Dim reader As MySqlDataReader
+        Dim userId As String = ""
         Dim userRole As String = ""
         Dim passwordFromDb As String = ""
 
         Try
-            Dim query As String = "SELECT password_hash, role FROM Users WHERE username = @username"
+            Dim query As String = "SELECT id, password_hash, role FROM Users WHERE username = @username"
             Dim cmd As New MySqlCommand(query, Conn)
             cmd.Parameters.AddWithValue("@username", txtKdPengguna.Text)
 
@@ -22,6 +23,7 @@ Public Class Login
             If reader.HasRows Then
                 reader.Read()
                 Dim passwordHashFromDb As String = reader("password_hash").ToString()
+                userId = reader("id").ToString()
                 userRole = reader("role").ToString()
 
                 If VerifyPassword(txtPassword.Text, passwordHashFromDb) Then
@@ -30,7 +32,7 @@ Public Class Login
                     ' Sembunyikan form login
                     Me.Hide()
 
-                    Dim dashboardForm As New Dashboard(userRole)
+                    Dim dashboardForm As New Dashboard(userRole, userId)
                     dashboardForm.ShowDialog()
 
                     txtPassword.Clear()

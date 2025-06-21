@@ -1,8 +1,11 @@
-﻿Public Class Dashboard
-    Private currentUserRole As String
-    Public Sub New(ByVal role As String)
-        InitializeComponent()
+﻿Imports Microsoft.VisualBasic.ApplicationServices
 
+Public Class Dashboard
+    Private currentUserId As String
+    Private currentUserRole As String
+    Public Sub New(ByVal role As String, ByVal userId As String)
+        InitializeComponent()
+        Me.currentUserId = userId
         Me.currentUserRole = role
     End Sub
     Private Sub FrmDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -70,7 +73,9 @@
     End Sub
 
     Private Sub PenciptaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PenciptaToolStripMenuItem.Click
-
+        Dim frm As New Pencipta()
+        frm.MdiParent = Me
+        frm.Show()
     End Sub
 
     Private Sub LMKToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LMKToolStripMenuItem.Click
@@ -80,22 +85,32 @@
     End Sub
 
     Private Sub LaguToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaguToolStripMenuItem.Click
-
+        Dim frm As New Lagu()
+        frm.MdiParent = Me
+        frm.Show()
     End Sub
 
     Private Sub OutletToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OutletToolStripMenuItem.Click
-
+        Dim frm As New Outlet()
+        frm.MdiParent = Me
+        frm.Show()
     End Sub
 
     Private Sub PenerimaanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PenerimaanToolStripMenuItem.Click
-
+        Dim frm As New Penerimaan(currentUserId)
+        frm.MdiParent = Me
+        frm.Show()
     End Sub
 
     Private Sub DistribusiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DistribusiToolStripMenuItem.Click
-
+        Dim frm As New Distribusi()
+        frm.MdiParent = Me
+        frm.Show()
     End Sub
 
     Private Sub LaporanDistribusiToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles LaporanDistribusiToolStripMenuItem1.Click
-
+        Dim frm As New Laporan()
+        frm.MdiParent = Me
+        frm.Show()
     End Sub
 End Class

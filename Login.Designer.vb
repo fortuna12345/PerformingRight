@@ -79,13 +79,13 @@ Partial Class Login
         Me.UsernameLabel.Name = "UsernameLabel"
         Me.UsernameLabel.Size = New System.Drawing.Size(220, 23)
         Me.UsernameLabel.TabIndex = 7
-        Me.UsernameLabel.Text = "Kode Pengguna"
+        Me.UsernameLabel.Text = "Username"
         Me.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.PerformingRight.My.Resources.Resources._79748_account_msn_icon
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(-8, 32)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(256, 211)
         Me.PictureBox1.TabIndex = 13
@@ -104,6 +104,7 @@ Partial Class Login
         Me.Controls.Add(Me.UsernameLabel)
         Me.Controls.Add(Me.PictureBox1)
         Me.Name = "Login"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

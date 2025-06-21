@@ -33,11 +33,11 @@ Partial Class LMK
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.btnHapus = New System.Windows.Forms.Button()
         Me.btnBatal = New System.Windows.Forms.Button()
         Me.btnUbah = New System.Windows.Forms.Button()
         Me.btnSimpan = New System.Windows.Forms.Button()
-        Me.txtEmail = New System.Windows.Forms.TextBox()
         CType(Me.dgvLmk, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -52,15 +52,15 @@ Partial Class LMK
         'txtAlamat
         '
         Me.txtAlamat.Location = New System.Drawing.Point(105, 63)
+        Me.txtAlamat.Multiline = True
         Me.txtAlamat.Name = "txtAlamat"
-        Me.txtAlamat.Size = New System.Drawing.Size(120, 20)
+        Me.txtAlamat.Size = New System.Drawing.Size(120, 50)
         Me.txtAlamat.TabIndex = 84
         '
         'txtTelepon
         '
         Me.txtTelepon.Location = New System.Drawing.Point(333, 11)
         Me.txtTelepon.Name = "txtTelepon"
-        Me.txtTelepon.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtTelepon.Size = New System.Drawing.Size(119, 20)
         Me.txtTelepon.TabIndex = 83
         '
@@ -93,9 +93,9 @@ Partial Class LMK
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(246, 14)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(63, 13)
+        Me.Label5.Size = New System.Drawing.Size(66, 13)
         Me.Label5.TabIndex = 75
-        Me.Label5.Text = "No Telepon"
+        Me.Label5.Text = "No. Telepon"
         '
         'Label3
         '
@@ -120,9 +120,16 @@ Partial Class LMK
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(19, 14)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(68, 13)
+        Me.Label1.Size = New System.Drawing.Size(41, 13)
         Me.Label1.TabIndex = 72
-        Me.Label1.Text = "Id Pengguna"
+        Me.Label1.Text = "Id LMK"
+        '
+        'txtEmail
+        '
+        Me.txtEmail.Location = New System.Drawing.Point(333, 40)
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(119, 20)
+        Me.txtEmail.TabIndex = 87
         '
         'btnHapus
         '
@@ -172,19 +179,11 @@ Partial Class LMK
         Me.btnSimpan.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnSimpan.UseVisualStyleBackColor = True
         '
-        'txtEmail
-        '
-        Me.txtEmail.Location = New System.Drawing.Point(333, 40)
-        Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtEmail.Size = New System.Drawing.Size(119, 20)
-        Me.txtEmail.TabIndex = 87
-        '
         'LMK
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(595, 450)
         Me.Controls.Add(Me.txtEmail)
         Me.Controls.Add(Me.dgvLmk)
         Me.Controls.Add(Me.txtAlamat)
